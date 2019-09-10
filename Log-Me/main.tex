@@ -79,7 +79,7 @@ tabsize=3
 \end{figure}
 
 \begin{large}
-\textbf{Login APPLICATION}\\
+\textbf{LOG ME}\\
 \end{large}
 \vspace*{0.2in}
 \begin{Large}
@@ -106,21 +106,27 @@ Athira Nair K\\
 \tableofcontents
 \newpage
 \section{Introduction}
-This paper gives an overview of a login application Log-Me which helps user to login to his/her private page,register if he/she is a new user.His password is checked with the existing one present in database.In case if both matches,confirms the user has logged in.Later,a page displaying hello is shown.
+\newline
+This paper gives an overview of a login application, Log-Me helps the user to login to his/her private page,  Register if he/she is a new user. And it gives special consideration regarding security. Password checking, with the existing one present in the database. In case if both of the passwords matches, confirms the user to log in. Later, a page displaying Hello username will be shown.
 
 \subsection{Scope}
-Log-Me is a mini web application which helps a user to login if he/she is a current user or register if he is new. Registration has been made more secure by keeping a key bound for passwords,certain common passwords and easily typed ones like qwerty,123 and own name are unacceptable. An email is send to user via mail to login.If these procedures goes on fine,person is directed to a page displaying Hello.Log-Me can be used as a platform by most of the apps to create their login feature.It follows a secured format in user login.
-
+\newline
+Log-Me is a mini web application which helps a user, to begin with Login if he/she is a current user or register if he is a new user. Registration has been made more secure by keeping a key bound for passwords, certain common passwords and easily typed ones like qwerty,123 and user names are unacceptable. Email is sent to the user via mail servers to log in.
+\newline
+If these procedures go on fine, a person is directed to a page displaying Hello with a username. Log-Me can be used as a platform by most of the apps to create their login feature. It follows a secured format in user login.
 \subsection{Definition}
-\item Services: Functionalities offered by application.
-\item Validation:Checks validity of user.
-\item Update:Adding new information and changing previous one.
-\item Push notifications:Messages that are received in mail.
+\newline
+\item Services : Functionalities offered by application.
+\item Validation: Checks validity of user.
+\item Update: Adding new information and changing previous one.
+\item Push notifications: Messages that are received in the mail.
+
 
 \subsection{Acronyms}
-\item DD:Design Documentation
-\item API:Application Program interface
-\item DBMS:database management System.
+\newline
+\item DD: Design Documentation
+\item API: Application Program interface
+\item DBMS: Database Management System.
 
 
 \subsection{Document Structure}
@@ -133,32 +139,35 @@ Log-Me is a mini web application which helps a user to login if he/she is a curr
 \item Chapter7: References
 
 \section{Architectural Design}
+\newline
 \subsection{Overview}
-Whole project is divided into 5 classes:
+\newline
+The whole project is divided into 5 classes:
 \newline
 \item\textbf{Admin:}
 \newline
 \newline Handles all the works and has the power to remove,add user.
 \newline
 \item\textbf{Login class:}
-\newline
-\newline User is asked to enter his username and password to login.Hence two attributes used here are User Id and password.If entered details are incorrect(using validate login method),user has accessibility to reset password.Another option is present to register as a new user,where user is asked to enter a new password and methods like delete changed password and add new password are included.Sign up and reset password are connected with login page.
-
+\item\item User is asked to enter his username and password to log in. Hence two attributes used here are User Id and password.
+\item\item If entered details are incorrect(using validate login method), the user has accessibility to reset the password. 
+\item\item Sign up is meant for a new user to login.
+\item\item Another option is present to reset the password, where the user is asked to enter a new password and methods like delete changed password and add new password are included. Sign up and reset password is connected with the login page.
 \newline
 \item\textbf{Sign up:}
-\newline
-\newline Here attributes like Username,new password are asked.Methods like reset password() to store new password and register() to provide a link to database.
+\item\item Here attributes like Username, password is used.
+\item\item Methods like a register() to provide a link to the database to create a new token. When a user is registered, in the database the email_confirmed column set to False.
+\item\item An email is concerned with a unique URL and each URL with a token.
 \newline
 \item\textbf{Reset password:}
-\newline
-\newline Makes changes in database in case of password by searching for it using search password() if it returns true deletes the old one.Here API fetching is used to provide login link to the user to his G-Mail/outlook mail.
+\item\item A request to reset for a given account's email is sent.
+\item\item When the user clicks the link, checks which email to confirm and sets email_confirmed column to True. This is the functionality of valid_mail().
+\item\item Later the password of the user is changed in password column and the old one is deleted.
+\item\item Here API fetching is used to provide login link to the user to his G-Mail/outlook mail.
 \newline
 \item\textbf{Display:}
 \newline
-\newline Displays Hello :) via gethello() method.
-
-
-
+\newline Displays with username via gethello() method.
 
 \subsection{Class Diagram}
 

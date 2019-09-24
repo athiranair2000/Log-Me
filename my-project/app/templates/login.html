@@ -1,22 +1,37 @@
-<link rel="stylesheet" href="my-project/app/static/style.css" type="text/css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+        <section class="hero is-primary is-fullheight">
 
-<form action="/login" method="POST"> 
-<div class="login">
-<div class="login-screen">
-<div class="app-title">
-    <h1>Login</h1>
-
-</div>
-<div class="login-form">
-<div class="handle">
-    <input type="text" class="login-field" value="" placeholder="username" name="username">
-    <label class="login-field-icon fui-user" for="login-name"></label></div>
-    <div class="handle">
-            <input type="password" class="login-field" value="" placeholder="password" name="password">
-            <label class="login-field-icon fui-user" for="login-name"></label></div>
-<input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
-</div>
-</div>
-</div>
-</form>
-
+<div class="column is-4 is-offset-4">
+        <h3 class="title">Login</h3>
+        <div class="box">
+            <form method="POST" action="/login">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+                </div>
+                <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+    

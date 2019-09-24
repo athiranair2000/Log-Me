@@ -1,29 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<title>{% block title %}{% endblock %}</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootsrap.min.css" rel="stylesheet">
 
-	<link href="https://maxcdn.bootstrapcdn.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+<html>
 
-	</head>
-	<body>
-	  <div class="container">
-	  <div class="header clearfix">
-	  <nav>
-		  <ul class="nav nav-pills pull-right">
-			  <lirole="presentation"><ahref="/">SignUp</ahref></lirole>
-			  <lirole="presentation"><a href="/about">About</a></lirole>
-		  </ul>
-		
-		</nav>
-	  </div>
-	  {% block body %}
-	  {% endblock %}
-	  <footer class="footer">
-		  <p> 2019 Athira Nair K</p>
-	  </footer>
-	  </div>
-	 </body>
-	 </html> 
-	
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log-Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<!--Burm builder-->
+<body>
+    <section class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                                Profile
+                            </a>
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                Login
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+                <div class="container has-text-centered">
+                   Log Me Application,
+                   Authentication and authorisation of Login
+                </div>
+            </div>
+
+        
+    </section>
+</body>
+
+</html>

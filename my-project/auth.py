@@ -1,4 +1,4 @@
-from flask import Blueprint,render_template,redirect,url_for,request
+from flask import Blueprint,render_template,redirect,url_for,request,login_user,login_request
 from werkzeug.security import generate_password_hash,check_password_hash
 from .models import User
 from . import db
@@ -37,3 +37,8 @@ def signup_post():
 	db.session.commit()
 
 	return redirect(url_for('auth.login'))
+@auth.route('/logout')
+@login_required
+def logout():
+	logout_user()
+	return redirect(url_for('main.index'))

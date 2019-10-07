@@ -26,4 +26,22 @@ If these procedures go on fine, a person is directed to a page displaying Hello 
     
   </tr>
   </table>
+  
+## WorkFlow:
+
+```
+.......
+|__ Log-Me
+├── my-project
+│   ├── __init__.py
+│   ├── auth.py
+│   ├── main.py
+│   ├── models.py
+│   ├── views.py
+│   └── run.py
+├── app
+│   ├── static
+|       |-style.css
+|   ├── Instance
+        |-config.py
 
